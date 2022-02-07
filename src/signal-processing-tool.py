@@ -1,7 +1,6 @@
 import numpy as np
 import scipy.signal as signal
 from pyedflib import highlevel
-import matplotlib.pyplot as plt
 from os import listdir, makedirs
 from os.path import isfile, join, splitext, isdir
 
@@ -61,6 +60,7 @@ class SignalProcessingTool:
             fileName(String): Name of file
             option(String): Choosen wave to draw
         """
+        import matplotlib.pyplot as plt
         choosenOptionLabel = self.getHeaders(self.filesList[fileName])[option]
         signals = highlevel.read_edf(self.filesList[fileName])[0]
         data = signal.resample(signals.T, 6250)
