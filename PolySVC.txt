@@ -1,0 +1,17 @@
+{'order': 2, 'flow': 0.5, 'fhigh': 50} Accuracy score: 0.9442970822281167
+
+{'order': 81, 'fcut': 40, 'fstop': 45} Accuracy score: 0.946949602122016
+
+{'order': 5, 'flow': 0.5, 'fhigh': 50} Accuracy score: 0.9496021220159151
+{'order': 6, 'flow': 0.5, 'fhigh': 50} Accuracy score: 0.9496021220159151
+{'order': 5, 'flow': 0.5, 'fhigh': 45} Accuracy score: 0.9496021220159151
+{'order': 6, 'flow': 0.5, 'fhigh': 45} Accuracy score: 0.9496021220159151
+
+{'order': 5, 'fcut': 50} Accuracy score: 0.9496021220159151
+{'order': 6, 'fcut': 50} Accuracy score: 0.9496021220159151
+
+{'order': 2, 'flow': 2, 'fhigh': 45} Accuracy score: 0.9628647214854111
+{'order': 5, 'flow': 2, 'fhigh': 45} Accuracy score: 0.9628647214854111
+{'order': 6, 'flow': 2, 'fhigh': 45} Accuracy score: 0.9628647214854111
+
+{'order': 2, 'flow': 2, 'fhigh': 45} -> 0.9628647214854111
