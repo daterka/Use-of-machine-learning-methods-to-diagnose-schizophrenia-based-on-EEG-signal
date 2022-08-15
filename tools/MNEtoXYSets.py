@@ -1,7 +1,7 @@
 import mne
 
-def get_label(edf, edf_file):
-    if len(edf_file) == 0:
+def get_label(edf, edf_file = None):
+    if edf_file == None:
         patient_edf_file_name = edf.filenames[0].split('\\')[-1]
         isSick = patient_edf_file_name.lower().startswith('s')
     else:
@@ -37,17 +37,20 @@ def transform_patients_data_into_X_y_sets(patients_data, info=True):
     if info:
         print_info(epochs_num_per_patient, labels)
 
-
 def transform(patients_data, info=False, edf_file=[]):
     epochs_per_patient = []
     labels = []
-    
+
     for index, edf in enumerate(patients_data):
         epochs = mne.make_fixed_length_epochs(edf, duration=25, preload=True, verbose=False)
         
         epochs_per_patient.append(epochs)
         
-        label = get_label(edf, edf_file[index])
+        if len(edf_file) != 0:
+            label = get_label(edf, edf_file[index])
+        else:
+            label = get_label(edf)
+
         labels.extend([label for _ in epochs])
     
     epochs = mne.concatenate_epochs(epochs_per_patient)
