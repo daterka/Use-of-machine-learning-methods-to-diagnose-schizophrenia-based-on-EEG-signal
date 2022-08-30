@@ -103,7 +103,7 @@ def preprocess_datasets(train_ds, validation_ds, test_ds, preprocess_input):
 
 
 # run: build, compile, train and test model
-def run(train_ds, validation_ds, test_ds, input_shape, preprocess_input, base_model, build_model,
+def run_pretrained(train_ds, validation_ds, test_ds, input_shape, preprocess_input, base_model, build_model,
         flatten = True, lr = 0.001, epochs=100, patience=15, save_path=''):
     
     train_ds, validation_ds, test_ds = preprocess_datasets(train_ds, validation_ds, test_ds, preprocess_input)
@@ -133,6 +133,8 @@ def run(train_ds, validation_ds, test_ds, input_shape, preprocess_input, base_mo
 # evalute model
 def test_model_raw_data(X_test, y_test, model, save_path):
     predictions = model.predict(X_test, verbose=0)
+    
+    print(predictions)
 
     predictions = [0 if x < 0.5 else 1 for x in predictions]
 
