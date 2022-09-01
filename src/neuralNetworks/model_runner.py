@@ -133,8 +133,6 @@ def run_pretrained(train_ds, validation_ds, test_ds, input_shape, preprocess_inp
 # evalute model
 def test_model_raw_data(X_test, y_test, model, save_path):
     predictions = model.predict(X_test, verbose=0)
-    
-    print(predictions)
 
     predictions = [0 if x < 0.5 else 1 for x in predictions]
 
