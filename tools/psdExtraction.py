@@ -2,7 +2,7 @@ import numpy as np
 
 from mne.time_frequency import psd_welch
 
-def eeg_power_band(epochs):
+def psd_extraction(epochs):
     """EEG relative power band feature extraction.
 
     This function takes an ``mne.Epochs`` object and creates EEG features based

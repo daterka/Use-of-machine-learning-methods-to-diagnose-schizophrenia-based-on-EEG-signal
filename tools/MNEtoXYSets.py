@@ -24,7 +24,7 @@ def transform_patients_data_into_X_y_sets(patients_data, info=True):
     
     epochs_num_per_patient = []
     for edf in patients_data:
-        epochs = mne.make_fixed_length_epochs(edf, duration=25, preload=True, verbose=False)
+        epochs = mne.make_fixed_length_epochs(edf, duration=5, preload=True, verbose=False)
         
         epochs_per_patient.append(epochs)
         epochs_num_per_patient.append(len(epochs))
@@ -42,7 +42,7 @@ def transform(patients_data, info=False, edf_file=[]):
     labels = []
 
     for index, edf in enumerate(patients_data):
-        epochs = mne.make_fixed_length_epochs(edf, duration=25, preload=True, verbose=False)
+        epochs = mne.make_fixed_length_epochs(edf, duration=5, preload=True, verbose=False)
         
         epochs_per_patient.append(epochs)
         
