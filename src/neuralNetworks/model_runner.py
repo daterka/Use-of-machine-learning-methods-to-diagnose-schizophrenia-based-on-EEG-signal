@@ -9,6 +9,7 @@ from sklearn.metrics import accuracy_score, ConfusionMatrixDisplay, RocCurveDisp
 
 from keras.optimizers import Adam
 from keras.callbacks import ModelCheckpoint, EarlyStopping
+from keras.utils import plot_model
 
 # plotting results
 def plot_loss(history, save_path, model_name):
@@ -163,6 +164,8 @@ def run(X_train, X_test, y_train, y_test, input_shape, build_model,
     
     model = build_model(input_shape, opt)
     
+    plot_model(model, to_file='model_plot{}.png'.format(model._name), show_shapes=True, show_layer_names=True)
+
     history = model.fit(
         x=X_train, 
         y=y_train.reshape(-1,1),
